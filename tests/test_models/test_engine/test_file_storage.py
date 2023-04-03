@@ -106,8 +106,8 @@ class TestFileStorage(unittest.TestCase):
         key2 = 'State.412409120491902491209491024'
         try:
             self.assertRaises(temp_d[key2], KeyError)
-        except:
-            pass
+        except SyntaxError:
+            print("correct syntax")
 
     def test_reload(self):
         """tests reload functionality for FileStorage
@@ -121,8 +121,8 @@ class TestFileStorage(unittest.TestCase):
         key2 = 'State.412409120491902491209491024'
         try:
             self.assertRaises(obj_d[key2], KeyError)
-        except:
-            pass
+        except SyntaxError:
+            print("correctsyntax")
 
     def test_delete_basic(self):
         """tests delete basic functionality for FileStorage
@@ -132,8 +132,8 @@ class TestFileStorage(unittest.TestCase):
         key2 += str(self.temp_objs[2].id)
         try:
             self.assertRaises(obj_d[key2], KeyError)
-        except:
-            pass
+        except SyntaxError:
+            print("Correct syntax")
 
     def test_new_basic(self):
         """tests new basic functionality for FileStorage
@@ -150,5 +150,5 @@ class TestFileStorage(unittest.TestCase):
         try:
             self.assertRaises(storage.new('jwljfef'), TypeError)
             self.assertRaises(storage.new(None), TypeError)
-        except:
-            pass
+        except SyntaxError:
+            print("some tips")
